@@ -20,8 +20,8 @@ jobs:
     
     - 
       name: Build the Docker image
-      run: docker build --tag ghcr.io/${{ github.owner }}/vvot_fast_api:latest .
+      run: docker build --tag ghcr.io/${{github.actor}}/vvot_fast_api:latest .
       
     - 
       name: Push the Docker image to Container Registry
-      run: docker push ghcr.io/${{ github.owner }}/vvot_fast_api:latest
+      run: docker push ghcr.io/${{github.actor}/vvot_fast_api:latest
