@@ -1,0 +1,27 @@
+name: build
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - 
+      name: Login to GitHub Container Registry
+      uses: docker/login-action@v3
+      with:
+        registry: ghcr.io
+        username: ${{github.actor}}
+        password: ${{secrets.GITHUB_TOKEN}}
+    
+    - 
+      name: Build the Docker image
+      run: docker build . --file Dockerfile --tag fa_hello:latest
+      
+    - 
+      name: Push the Docker image to Continer Registry
+      run: docker push ghcr.io/VvOT_fast_api/fa_hello:latest
