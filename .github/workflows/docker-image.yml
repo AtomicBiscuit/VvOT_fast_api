@@ -20,8 +20,8 @@ jobs:
     
     - 
       name: Build the Docker image
-      run: docker build . --tag ghcr.io/${{ github.repository }}/fa_hello:latest
+      run: docker build --tag ghcr.io/${{ github.repository }}:latest --tag ghcr.io/${{ github.repository }}:latest .
       
     - 
-      name: Push the Docker image to Continer Registry
-      run: docker push ghcr.io/${{ github.repository }}/fa_hello:latest
+      name: Push the Docker image to Container Registry
+      run: docker push ghcr.io/${{ github.repository }}:latest
