@@ -20,7 +20,7 @@ jobs:
     
     - 
       name: Build the Docker image
-      run: docker build . --file Dockerfile --tag fa_hello:latest
+      run: docker build . --file /app/Dockerfile --tag fa_hello:latest
       
     - 
       name: Push the Docker image to Continer Registry
