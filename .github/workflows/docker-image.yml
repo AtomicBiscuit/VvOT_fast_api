@@ -24,4 +24,4 @@ jobs:
       
     - 
       name: Push the Docker image to Container Registry
-      run: docker push ghcr.io/${{github.actor}/vvot_fast_api:latest
+      run: docker push ghcr.io/${{github.actor}}/vvot_fast_api:latest
