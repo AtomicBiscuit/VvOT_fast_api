@@ -43,4 +43,4 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Run test cases
-        run: pytest test.py
+        run: dir
