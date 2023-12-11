@@ -27,8 +27,8 @@ jobs:
     
     - 
       name: Build the Docker image
-      run: docker build -t ghcr.io/atomicbiscuit/vvot_fast_api/hellofastapi:latest .
+      run: docker build -t ghcr.io/{{ github.repository }}/hellofastapi:latest .
 
     - 
       name: Push the Docker image to Container Registry
-      run: docker push ghcr.io/atomicbiscuit/vvot_fast_api/hellofastapi:latest
+      run: docker push ghcr.io/{{ github.repository }}/hellofastapi:latest
