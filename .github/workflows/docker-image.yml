@@ -23,12 +23,12 @@ jobs:
 
     -
       name: Checkout the Repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
     
     - 
       name: Build the Docker image
-      run: docker build -t ghcr.io/${{ github.repository }}/hellofastapi:latest .
+      run: docker build -t ghcr.io/${{ github.owner }}/vvot/hellofastapi:latest .
 
     - 
       name: Push the Docker image to Container Registry
-      run: docker push ghcr.io/${{ github.repository }}/hellofastapi:latest
+      run: docker push ghcr.io/${{ github.owner }}/vvot/hellofastapi:latest
