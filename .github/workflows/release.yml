@@ -32,3 +32,15 @@ jobs:
     - 
       name: Push the Docker image to Container Registry
       run: docker push ghcr.io/atomicbiscuit/vvot_fast_api/hellofastapi:latest
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/atomicbiscuit/vvot_fast_api/hellofastapi:latest
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Run test cases
+        run: pytest
