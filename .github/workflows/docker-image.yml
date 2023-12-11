@@ -20,7 +20,7 @@ jobs:
     
     - 
       name: Build the Docker image
-      run: docker build -t ghcr.io/atomicbiscuit/vvot_fast_api/hellofastapi:latest --file app/Dockerfile .
+      run: docker build -t ghcr.io/atomicbiscuit/vvot_fast_api/hellofastapi:latest --file /app/Dockerfile
       
     - 
       name: Push the Docker image to Container Registry
