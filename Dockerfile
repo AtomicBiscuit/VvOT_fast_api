@@ -8,6 +8,7 @@ RUN pip install -r /requirements.txt
 
 COPY app/main.py /app/main.py
 COPY app/fastapi_module.py /app/fastapi_module.py
+COPY app/test.py /app/test.py
 
 WORKDIR /app/
 
